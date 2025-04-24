@@ -1,42 +1,84 @@
+/* Base styles */
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  margin: 0;
+  padding: 0;
   text-align: center;
+  width: 100%;
+  height: 100%;
+  max-width: none;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+body,
+html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+/* App Container */
+.app-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+/* Globe Container */
+.globe-container {
+  width: 100%;
+  height: 100%;
+}
+
+/* Countdown Container */
+.countdown-container {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  color: white;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  width: 90%;
+  max-width: 600px;
+}
+
+.countdown-title {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.countdown-time {
+  font-size: 1.75rem;
+  margin-top: 0.5rem;
+}
+
+/* Media queries for responsive design */
+@media screen and (max-width: 768px) {
+  .countdown-container {
+    top: 20%;
   }
-  to {
-    transform: rotate(360deg);
+
+  .countdown-title {
+    font-size: 1.2rem;
+  }
+
+  .countdown-time {
+    font-size: 1.2rem;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+@media screen and (max-width: 480px) {
+  .countdown-container {
+    top: 15%;
   }
-}
 
-.card {
-  padding: 2em;
-}
+  .countdown-title {
+    font-size: 1rem;
+  }
 
-.read-the-docs {
-  color: #888;
+  .countdown-time {
+    font-size: 0.9rem;
+  }
 }
